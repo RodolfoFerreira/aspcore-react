@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-import { NavMenu } from './NavMenu';
+import { Header } from './Header/Header';
+import { LeftMenu } from './LeftMenu/LeftMenu';
 
 export class Layout extends Component {
-  static displayName = Layout.name;
+    static displayName = Layout.name;
 
-  render () {
-    return (
-      <div>
-        <NavMenu />
-        <Container>
-          {this.props.children}
-        </Container>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Header />
+                <LeftMenu />
+                <section className="content">
+                    <div className="container-fluid">
+                        {this.props.children}
+                    </div>
+                </section>
+            </div>
+        );
+    }
 }
